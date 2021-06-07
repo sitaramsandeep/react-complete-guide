@@ -7,11 +7,11 @@ const NewExpense = (props) => {
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
-      id: Math.random().toString()
-    }
+      id: Math.random().toString(),
+    };
 
-    props.onAddExpense(expenseData)
-  }
+    props.onAddExpense(expenseData);
+  };
 
   const cancelClicked = (show) => {
     setShowSection(show)
@@ -27,7 +27,7 @@ const NewExpense = (props) => {
       <button onClick={startEditingHandler} >Add New Expense</button>:
       <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancelClick={cancelClicked}/>}
     </div>
-  )
-}
+  );
+};
 
 export default NewExpense;

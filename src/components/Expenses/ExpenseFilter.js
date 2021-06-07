@@ -1,4 +1,4 @@
-import "./ExpenseFilter.css"
+import "./ExpenseFilter.css";
 
 const ExpenseFilter = (props) => {
   const yearsArray = [
@@ -9,11 +9,11 @@ const ExpenseFilter = (props) => {
   ]
   const yearChangeHandler = (event) => {
     props.onFilteredYearChange(event.target.value);
-  }
+  };
 
   return (
-    <div className='expenses-filter'>
-      <div className='expenses-filter_control'>
+    <div className="expenses-filter">
+      <div className="expenses-filter_control">
         <label>Filter by year</label>
         <select onChange={yearChangeHandler} value={props.selection}>
           {yearsArray.map(year => {
@@ -23,6 +23,6 @@ const ExpenseFilter = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default ExpenseFilter;
