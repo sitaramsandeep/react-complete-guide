@@ -1,7 +1,12 @@
 import "./ExpenseFilter.css"
 
 const ExpenseFilter = (props) => {
-
+  const yearsArray = [
+    {id:1, value:"2022"},
+    {id:2, value:"2021"},
+    {id:3, value:"2020"},
+    {id:4, value:"2019"}
+  ]
   const yearChangeHandler = (event) => {
     props.onFilteredYearChange(event.target.value);
   }
@@ -10,11 +15,10 @@ const ExpenseFilter = (props) => {
     <div className='expenses-filter'>
       <div className='expenses-filter_control'>
         <label>Filter by year</label>
-        <select onChange={yearChangeHandler} value={props.selected}>
-          <option value='2022'>2022</option>
-          <option value='2021'>2021</option>
-          <option value='2020'>2020</option>
-          <option value='2019'>2019</option>
+        <select onChange={yearChangeHandler} value={props.selection}>
+          {yearsArray.map(year => {
+            return <option key={year.id} value={year.value}>{year.value}</option>
+          })}
         </select>
       </div>
     </div>
